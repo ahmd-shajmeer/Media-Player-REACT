@@ -13,7 +13,7 @@ function VideoCard() {
           onClick={handleShow}
           height={"300px"}
           variant="top"
-          src="https://www.flore-maquin.com/wp-content/uploads/Fight_club_RVB_72.jpg"
+          src="https://wallpapercg.com/media/ts_orig/18750.webp"
         />
         <Card.Body>
           <Card.Title className="d-flex justify-content-between align-items-center">
