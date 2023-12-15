@@ -31,11 +31,11 @@ function VideoCard() {
         </Modal.Header>
         <Modal.Body>
           <iframe
-            className="w-100"
-            width="600"
-            height="438"
-            src="https://www.youtube.com/embed/abuLOH7xs8I?autoplay=1"
-            title="Neru - Official Trailer | Mohanlal | Jeethu Joseph | Priyamani | Anaswara Rajan | Antony Perumbavoor"
+          className="w-100"
+            width="1020"
+            height="574"
+            src="https://www.youtube.com/embed/QdBZY2fkU-0?autoplay=1"
+            title="Grand Theft Auto VI Trailer 1"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

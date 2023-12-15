@@ -2,8 +2,26 @@ import React, { useState } from "react";
 import { Button, FloatingLabel, Modal, Form } from "react-bootstrap";
 
 function Add() {
-  const [show, setShow] = useState(false);
+  const [uploadVideo, setUploadVideo] = useState({
+    id: "",
+    caption: "",
+    url: "",
+    link: "",
+  });
 
+  const getYoutubeEmbedLink = (e) =>{
+    const {value} = e.target
+    if(value.includes("v=")){
+      let vID = value.split("v=")[1].slice(0,11)
+      setUploadVideo({...uploadVideo,link:`https://www.youtube.com/embed/${vID}`})
+    }else
+    setUploadVideo({...uploadVideo,link:""})
+
+  }
+
+  // Modal
+  const [show, setShow] = useState(false);
+  console.log(uploadVideo);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
@@ -33,28 +51,50 @@ function Add() {
             label="Enter Video ID"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="URL Only!!!" />
+            <Form.Control
+              type="text"
+              placeholder="URL Only!!!"
+              onChange={(e) =>
+                setUploadVideo({ ...uploadVideo, id: e.target.value })
+              }
+            />
           </FloatingLabel>
           <FloatingLabel
             controlId="floatingInput"
             label="Enter Video Name"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="URL Only!!!" />
+            <Form.Control
+              type="text"
+              placeholder="URL Only!!!"
+              onChange={(e) =>
+                setUploadVideo({ ...uploadVideo, caption: e.target.value })
+              }
+            />
           </FloatingLabel>
           <FloatingLabel
             controlId="floatingInput"
             label="Enter Video URL"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="URL Only!!!" />
+            <Form.Control
+              type="text"
+              placeholder="URL Only!!!"
+              onChange={(e) =>
+                setUploadVideo({ ...uploadVideo, url: e.target.value })
+              }
+            />
           </FloatingLabel>
           <FloatingLabel
             controlId="floatingInput"
             label="Enter Video Image URL"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="URL Only!!!" />
+            <Form.Control
+              type="text"
+              placeholder="URL Only!!!"
+              onChange={getYoutubeEmbedLink}
+            />
           </FloatingLabel>
         </Modal.Body>
         <Modal.Footer>

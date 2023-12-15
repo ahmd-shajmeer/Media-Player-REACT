@@ -7,11 +7,11 @@ function Footer() {
       <div className="footer-content w-100 mt-5">
         <div className="container d-flex justify-content-between text-white">
           <div className="title w-25 text-dark">
-            <h3 className="fw-normal">
+            <h5 className="fw-normal">
               {" "}
               <i class="fa-solid fa-cloud-arrow-up me-2"></i>
               Media Player
-            </h3>
+            </h5>
             <p>
               Designed and build with all the love in the world by the Bootstrap
               team with the help of our contributors.
@@ -20,7 +20,7 @@ function Footer() {
             <span>Currently v5.3.2.</span>
           </div>
           <div className="links d-flex flex-column">
-            <h3 className="fw-normal">Links</h3>
+            <h5 className="fw-normal">Links</h5>
             <Link to={'/'} className="nav-link">
               <a>
                 Landing Page
@@ -38,7 +38,7 @@ function Footer() {
             </Link>
           </div>
           <div className="guides">
-            <h3 className="fw-normal">Guides</h3>
+            <h5 className="fw-normal">Guides</h5>
             <a className="nav-link" href="https://react.dev/" target="_blank">
               React
             </a>
@@ -50,7 +50,7 @@ function Footer() {
             </a>
           </div>
           <div className="contact">
-            <h3 className="fw-normal">Contact Us</h3>
+            <h5 className="fw-normal">Contact Us</h5>
             <div className="d-flex gap-2">
               <input
                 placeholder="Enter Your Email"

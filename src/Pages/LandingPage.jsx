@@ -15,7 +15,9 @@ function LandingPage() {
             videos, also allow them to arrange them in different categories by
             providing drag and drop functionalities.
           </p>
-          <Link to={'home'} className="btn btn-info mt-5 fw-bolder">Get Started</Link>
+          <Link to={"home"} className="btn btn-info mt-5 fw-bolder">
+            Get Started
+          </Link>
         </div>
         <div className="col"></div>
         <div className="col-lg-6">
@@ -48,18 +50,24 @@ function LandingPage() {
             />
             <Card.Body>
               <Card.Title>Categorize Videos</Card.Title>
-              <Card.Text>User can catogerise their videos according to their preferences using drag and drop feature</Card.Text>
+              <Card.Text>
+                User can catogerise their videos according to their preferences
+                using drag and drop feature
+              </Card.Text>
             </Card.Body>
           </Card>
           {/* {Card3} */}
           <Card style={{ width: "22rem" }}>
             <Card.Img
               variant="top"
-              src="https://img.freepik.com/premium-vector/hands-holding-tablet-with-video-player-screen-video-marketing-concept-tutorials-lectures-conference-webinar_163786-501.jpg" height={400}
+              src="https://img.freepik.com/premium-vector/hands-holding-tablet-with-video-player-screen-video-marketing-concept-tutorials-lectures-conference-webinar_163786-501.jpg"
+              height={400}
             />
             <Card.Body>
               <Card.Title>Watch History</Card.Title>
-              <Card.Text>User can see the last video that they have watched.</Card.Text>
+              <Card.Text>
+                User can see the last video that they have watched.
+              </Card.Text>
             </Card.Body>
           </Card>
         </div>
@@ -67,13 +75,33 @@ function LandingPage() {
       <div className="row mt-5 border rounded align-items-center p-5">
         <div className="col-lg-5">
           <h3 className="text-warning mb-5">Simple, Fast and Powerful</h3>
-          <p style={{textAlign:'justify'}}><span className="fs-5">Play Everything</span>: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, cumque?</p>
-          <p style={{textAlign:'justify'}}><span className="fs-5">Categorize Videos</span>: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ab velit est, vero omnis dolore!</p>
-          <p style={{textAlign:'justify'}}><span className="fs-5">Watch History</span>: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed dolorum eos in maxime expedita architecto!</p>
+          <p style={{ textAlign: "justify" }}>
+            <span className="fs-5">Play Everything</span>: Lorem, ipsum dolor
+            sit amet consectetur adipisicing elit. Facilis, cumque?
+          </p>
+          <p style={{ textAlign: "justify" }}>
+            <span className="fs-5">Categorize Videos</span>: Lorem, ipsum dolor
+            sit amet consectetur adipisicing elit. Perferendis ab velit est,
+            vero omnis dolore!
+          </p>
+          <p style={{ textAlign: "justify" }}>
+            <span className="fs-5">Watch History</span>: Lorem ipsum, dolor sit
+            amet consectetur adipisicing elit. Sed dolorum eos in maxime
+            expedita architecto!
+          </p>
         </div>
         <div className="col"></div>
         <div className="col-lg-6">
-        <iframe width="600" height="438" src="https://www.youtube.com/embed/abuLOH7xs8I" title="Neru - Official Trailer | Mohanlal | Jeethu Joseph | Priyamani | Anaswara Rajan | Antony Perumbavoor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe
+          className="w-100"
+            width="1020"
+            height="574"
+            src="https://www.youtube.com/embed/QdBZY2fkU-0"
+            title="Grand Theft Auto VI Trailer 1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>{" "}
         </div>
       </div>
     </div>
