@@ -1,24 +1,48 @@
 import React, { useState } from "react";
 import { Button, FloatingLabel, Modal, Form } from "react-bootstrap";
+import { uploadNewVideoAPI } from "../services/allAPI";
 
 function Add() {
   const [uploadVideo, setUploadVideo] = useState({
-    id: "",
-    caption: "",
+    id: "",caption: "",
     url: "",
     link: "",
   });
 
-  const getYoutubeEmbedLink = (e) =>{
-    const {value} = e.target
-    if(value.includes("v=")){
-      let vID = value.split("v=")[1].slice(0,11)
-      setUploadVideo({...uploadVideo,link:`https://www.youtube.com/embed/${vID}`})
-    }else
-    setUploadVideo({...uploadVideo,link:""})
+  // Getting Embed link
+  const getYoutubeEmbedLink = (e) => {
+    const { value } = e.target;
+    if (value.includes("v=")) {
+      let vID = value.split("v=")[1].slice(0, 11);
+      setUploadVideo({...uploadVideo,link:`https://www.youtube.com/embed/${vID}`,
+      });
+    } else setUploadVideo({...uploadVideo,link:"" });
+  };
 
-  }
-
+  // Upload Button
+  const handleUpload = async () => {
+    const { id, caption, url, link } = uploadVideo;
+    if (!id || !caption || !url || !link) {
+      alert("Uploading form is incomplete, Please fill the form completely!!!");
+    } else {
+      // Storing uploadVideo in json server
+      const result = await uploadNewVideoAPI(uploadVideo);
+      console.log(result);
+      if (result.status >= 200 && result.status < 300) {
+        // Success
+        handleClose();
+        // Reset uploadVideo
+        setUploadVideo({
+          id: "",
+          caption: "",
+          url: "",
+          link: "",
+        });
+      }else{
+        alert(result.message)
+      }
+    }
+  };
   // Modal
   const [show, setShow] = useState(false);
   console.log(uploadVideo);
@@ -55,7 +79,7 @@ function Add() {
               type="text"
               placeholder="URL Only!!!"
               onChange={(e) =>
-                setUploadVideo({ ...uploadVideo, id: e.target.value })
+                setUploadVideo({...uploadVideo,id:e.target.value })
               }
             />
           </FloatingLabel>
@@ -68,26 +92,26 @@ function Add() {
               type="text"
               placeholder="URL Only!!!"
               onChange={(e) =>
-                setUploadVideo({ ...uploadVideo, caption: e.target.value })
-              }
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            controlId="floatingInput"
-            label="Enter Video URL"
-            className="mb-3"
-          >
-            <Form.Control
-              type="text"
-              placeholder="URL Only!!!"
-              onChange={(e) =>
-                setUploadVideo({ ...uploadVideo, url: e.target.value })
+                setUploadVideo({...uploadVideo,caption:e.target.value })
               }
             />
           </FloatingLabel>
           <FloatingLabel
             controlId="floatingInput"
             label="Enter Video Image URL"
+            className="mb-3"
+          >
+            <Form.Control
+              type="text"
+              placeholder="URL Only!!!"
+              onChange={(e) =>
+                setUploadVideo({...uploadVideo,url:e.target.value })
+              }
+            />
+          </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Enter Video URL"
             className="mb-3"
           >
             <Form.Control
@@ -101,7 +125,9 @@ function Add() {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button className="btn-info">Upload</Button>
+          <Button className="btn-info" onClick={handleUpload}>
+            Upload
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
