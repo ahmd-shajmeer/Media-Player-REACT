@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Add from '../Components/Add'
 import { Link } from 'react-router-dom'
 import View from '../Components/View'
 import Category from '../Components/Category'
 
 function Home() {
+  const [uploadVideoResponse,setUploadVideoResponse] = useState({})
+  const [dropResponse,setDropResponse] = useState({})
   return (
     <>
     <div className="container mt-5 mb-5 d-flex justify-content-between">
       <div className="add-video">
-        <Add/>
+        <Add setUploadVideoResponse={setUploadVideoResponse}/>
       </div>
       <Link to={'/history'} className='nav-link text-white fs-4'>
       Watch History <i class="fa-solid fa-clock-rotate-left"></i>
@@ -18,10 +20,10 @@ function Home() {
     <div className="container-fluid row w-100 mt-5 mb-5">
       <div className="view-videos col-lg-9">
         <h2 className=''>All Upoaded Videos</h2>
-        <View/>
+        <View uploadVideoResponse={uploadVideoResponse} setDropResponse={setDropResponse}/>
       </div>
       <div className="category col-lg-3">
-        <Category/>
+        <Category dropResponse={dropResponse}/>
       </div>
     </div>
     </>

@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <div className="footer-content w-100 mt-5">
-        <div className="container d-flex justify-content-between text-white">
+        <div className="container d-flex justify-content-between text-white flex-column flex-sm-row">
           <div className="title w-25 text-dark">
             <h5 className="fw-normal">
               {" "}

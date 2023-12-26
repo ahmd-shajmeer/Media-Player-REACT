@@ -47,3 +47,17 @@ export const getAllCategoryAPI = async () => {
     return await commonAPI("GET",`${SERVER_URl}/categories`,"")
 }
 
+// Remove category
+export const removeCategoryAPI = async(id)=>{
+    return await commonAPI("DELETE",`${SERVER_URl}/categories/${id}`,{})
+}
+
+// Update category
+export const updateCategoryAPI = async (id,categoryDetails)=>{
+    return await commonAPI("PUT",`${SERVER_URl}/categories/${id}`,categoryDetails)
+}
+
+// View single video
+export const getAVideoAPI = async (id) =>{
+    return await commonAPI("GET",`${SERVER_URl}/allVideos/${id}`,"")
+}
