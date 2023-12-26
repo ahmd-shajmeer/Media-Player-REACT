@@ -1,1 +1,1 @@
-export const SERVER_URl = "http://localhost:3000"
+export const SERVER_URl = "https://mp-server-zrrl.onrender.com"
